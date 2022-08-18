@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Container = styled.div`
   display: flex;
@@ -13,7 +13,7 @@ export const CardsContainer = styled.section`
   gap: 10px;
   align-items: center;
   height: 220px;
-  padding-left: 10%;
+  padding: 0 10%;
 
   ::-webkit-scrollbar {
     display: none;

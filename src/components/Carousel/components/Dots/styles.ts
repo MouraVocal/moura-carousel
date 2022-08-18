@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 interface DotButtonProps {
   active: boolean;
@@ -19,8 +19,7 @@ export const Container = styled.section`
 `;
 
 export const DotButton = styled.button<DotButtonProps>`
-  background-color: ${({ active, theme }) =>
-    active ? theme.primaryColor : "#fff"};
+  background-color: ${({ active }) => (active ? '#1111f1' : '#fff')};
   border: none;
   border-radius: 50%;
   width: 10px;
