@@ -14,7 +14,12 @@
   },
   "devDependencies": {
     "@types/react": "17.0.20",
-    "@types/react-dom": "17.0.9",
+    "@types/react-dom": "^18.0.6",
+    "eslint": "^7.11.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "prettier": "^2.7.1",
+    "prettier-eslint": "^15.0.1",
     "typescript": "4.4.2"
   },
   "scripts": {
@@ -28,5 +33,8 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "repository": "https://github.com/MouraVocal/moura-carousel.git",
+  "author": "mouravocal <diego.moura3@gmail.com>",
+  "license": "MIT"
 }

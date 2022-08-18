@@ -1,6 +1,6 @@
-import React from "react";
-import { IMovie } from "models/movie";
-import { Container, DotButton } from "./styles";
+import React from 'react';
+import { IMovie } from '../../../../types/movie';
+import { Container, DotButton } from './styles';
 
 interface IDotsProps {
   info: IMovie[];
@@ -13,7 +13,7 @@ export const Dots = ({
   info,
   handleScrollTo,
   activeIndex,
-  setActiveIndex
+  setActiveIndex,
 }: IDotsProps) => {
   const Dotslength = info.length;
 

@@ -1,16 +1,16 @@
-import styled, { css } from "styled-components";
+import styled, { css } from 'styled-components';
 
 interface IButtonProps {
-  direction: "left" | "right";
+  direction: 'left' | 'right';
   size?: number;
   isVisible?: boolean;
 }
 
 export const Button = styled.button<IButtonProps>`
-  display: ${({ isVisible }) => (isVisible ? "flex" : "none")};
+  display: ${({ isVisible }) => (isVisible ? 'flex' : 'none')};
   position: absolute;
   ${({ direction }) =>
-    direction === "left"
+    direction === 'left'
       ? css`
           left: 0;
         `

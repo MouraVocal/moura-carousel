@@ -1,45 +1,45 @@
-import { useRef, useState } from "react";
-import Card from "./components/Card";
-import { CarouselButton } from "./components/CarouselButton";
-import { CardsContainer, CarouselContainer, Container } from "./styles";
-import { Dots } from "./components/Dots";
-import { IMovie } from "../../types/movie";
+import { useRef, useState } from 'react'
+import Card from './components/Card'
+import { CarouselButton } from './components/CarouselButton'
+import { CardsContainer, CarouselContainer, Container } from './styles'
+import { Dots } from './components/Dots'
+import { IMovie } from '../../types/movie'
 
 interface ICarouselProps {
-  info: IMovie[];
+  info: IMovie[]
 }
 
 export const Carousel = ({ info }: ICarouselProps) => {
-  const CarouselRef = useRef<HTMLDivElement>(null);
-  const CardRef = useRef<HTMLDivElement>(null);
+  const CarouselRef = useRef<HTMLDivElement>(null)
+  const CardRef = useRef<HTMLDivElement>(null)
 
-  const [activeIndex, setActiveIndex] = useState(1);
+  const [activeIndex, setActiveIndex] = useState(1)
 
-  const handleMoveCarousel = (direction: "left" | "right") => {
+  const handleMoveCarousel = (direction: 'left' | 'right') => {
     if (CarouselRef.current && CardRef.current) {
-      const { scrollLeft } = CarouselRef.current;
-      const { clientWidth: cardWidth } = CardRef.current;
+      const { scrollLeft } = CarouselRef.current
+      const { clientWidth: cardWidth } = CardRef.current
 
       const scrollTo =
-        direction === "left"
+        direction === 'left'
           ? scrollLeft - cardWidth - 10
-          : scrollLeft + cardWidth + 10;
+          : scrollLeft + cardWidth + 10
 
-      const scrollToIndex = Math.floor(scrollTo / cardWidth + 1);
+      const scrollToIndex = Math.floor(scrollTo / cardWidth + 1)
 
-      setActiveIndex(scrollToIndex < 1 ? 1 : scrollToIndex);
+      setActiveIndex(scrollToIndex < 1 ? 1 : scrollToIndex)
 
-      CarouselRef.current.scrollTo({ left: scrollTo, behavior: "smooth" });
+      CarouselRef.current.scrollTo({ left: scrollTo, behavior: 'smooth' })
     }
-  };
+  }
 
   const handleScrollTo = (index: number) => {
     if (CarouselRef.current && CardRef.current) {
-      const { clientWidth: cardWidth } = CardRef.current;
+      const { clientWidth: cardWidth } = CardRef.current
 
-      CarouselRef.current.scrollLeft = (cardWidth + 10) * index;
+      CarouselRef.current.scrollLeft = (cardWidth + 10) * index
     }
-  };
+  }
 
   return (
     <Container>
@@ -47,13 +47,13 @@ export const Carousel = ({ info }: ICarouselProps) => {
         <CarouselButton
           direction="left"
           size={100}
-          onClick={() => handleMoveCarousel("left")}
+          onClick={() => handleMoveCarousel('left')}
           isVisible={activeIndex > 1}
         />
         <CarouselButton
           direction="right"
           size={100}
-          onClick={() => handleMoveCarousel("right")}
+          onClick={() => handleMoveCarousel('right')}
           isVisible={activeIndex < info.length}
         />
         <CardsContainer ref={CarouselRef}>
@@ -77,5 +77,5 @@ export const Carousel = ({ info }: ICarouselProps) => {
         setActiveIndex={setActiveIndex}
       />
     </Container>
-  );
-};
+  )
+}

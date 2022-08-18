@@ -1,8 +1,8 @@
-import { ChevronLeft, ChevronRight } from "@styled-icons/material-outlined";
-import { Button } from "./styles";
+import { ChevronLeft, ChevronRight } from '@styled-icons/material-outlined';
+import { Button } from './styles';
 
 interface ICarouselButtonProps {
-  direction: "left" | "right";
+  direction: 'left' | 'right';
   size: number;
   onClick: () => void;
   isVisible?: boolean;
@@ -12,11 +12,11 @@ export const CarouselButton = ({
   direction,
   size,
   onClick,
-  isVisible
+  isVisible,
 }: ICarouselButtonProps) => {
   return (
     <>
-      {direction === "left" ? (
+      {direction === 'left' ? (
         <Button direction="left" onClick={onClick} isVisible={isVisible}>
           <ChevronLeft size={size} />
         </Button>
